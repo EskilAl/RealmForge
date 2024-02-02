@@ -3,6 +3,8 @@ package no.ntnu.idatg2001.backend.goals;
 import jakarta.persistence.Entity;
 import no.ntnu.idatg2001.backend.entityinformation.Unit;
 
+import java.io.Serializable;
+
 /**
  * The InventoryGoal class represents a goal that is fulfilled when the player has a certain item in
  * their inventory.
@@ -43,7 +45,7 @@ public class InventoryGoal extends Goal  {
    * @param value The value to set.
    */
   @Override
-  public void setGoalValue(Object value) throws UnsupportedOperationException {
+  public void setGoalValue(Serializable value) throws UnsupportedOperationException {
     if (value instanceof String) {
       this.goalValue = value;
     } else {

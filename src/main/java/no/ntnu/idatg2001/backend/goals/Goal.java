@@ -10,6 +10,9 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Transient;
 import no.ntnu.idatg2001.backend.entityinformation.Unit;
 
+import java.io.Serial;
+import java.io.Serializable;
+
 /**
  * The Goal class represents a goal in a game.
  */
@@ -22,8 +25,8 @@ public abstract class Goal {
   @Column(name = "id", nullable = false)
   private Long id;
 
-  @Transient
-   protected Object goalValue;
+
+   protected Serializable goalValue;
 
   private GoalType goalType;
 
@@ -60,7 +63,7 @@ public abstract class Goal {
    *
    * @param value The value to set.
    */
-  public abstract void setGoalValue(Object value);
+  public abstract void setGoalValue(Serializable value);
 
   /**
    * getGoalValue returns the goal value.

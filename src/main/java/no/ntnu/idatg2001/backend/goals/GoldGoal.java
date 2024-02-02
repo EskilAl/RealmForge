@@ -3,6 +3,8 @@ package no.ntnu.idatg2001.backend.goals;
 import jakarta.persistence.Entity;
 import no.ntnu.idatg2001.backend.entityinformation.Unit;
 
+import java.io.Serializable;
+
 /**
  * The GoldGoal class represents a gold goal in a game.
  */
@@ -42,7 +44,7 @@ public class GoldGoal extends Goal  {
    * @param value The value to set.
    */
   @Override
-  public void setGoalValue(Object value) throws UnsupportedOperationException {
+  public void setGoalValue(Serializable value) throws UnsupportedOperationException {
     if (value instanceof Integer) {
       this.goalValue = value;
     } else {
